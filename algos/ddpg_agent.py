@@ -80,7 +80,7 @@ class ddpg_agent:
             observation = self.env.reset()
             obs = observation['observation']
             ag = observation['achieved_goal']
-            g = observation['desired_goal']
+            g = observation['desired_goal'] # 每一个episode下，desired_goal是不同的
 
             for t in range(self.env_params['max_timesteps']):
                 with torch.no_grad():
